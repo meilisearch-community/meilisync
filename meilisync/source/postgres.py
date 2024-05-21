@@ -71,9 +71,7 @@ class Postgres(Source):
             fields = "*"
 
         def execute():
-            cur.execute(
-                f"SELECT {fields} FROM {sync.table}"
-            )
+            cur.execute(f"SELECT {fields} FROM {sync.table}")
 
         def fetch():
             return cur.fetchmany(size)
