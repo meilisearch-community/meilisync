@@ -218,6 +218,23 @@ Sentry configuration.
 - `dsn`: the sentry dsn.
 - `environment`: the sentry environment, default is `production`.
 
+
+## Contributing
+
+### Running Tests
+
+Setup
+1. get the docker services running initially
+  `docker compose -f ./compose.dev.yml up --build -d`
+1. edit the `test/config/*.yml` files, adding the "Default Admin API Key" api key from `meili_data/api_keys.json` to the `meilisearch.api_key` field
+2. `docker compose up --build -d`
+
+Then to run the tests
+
+```
+docker exec -it meilisync-localdev-meilisync-1 poetry run pytest
+```
+
 ## License
 
 This project is licensed under the
