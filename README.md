@@ -244,7 +244,7 @@ docker exec -it meilisync-localdev-meilisync-1 poetry run pytest tests/test_mysq
 Postgres
 ```
 docker exec -it meilisync-localdev-meilisync-1 meilisync --config tests/config/postgres.yml start
-docker exec -it meilisync-localdev-meilisync-1 poetry run pytest tests/test_mysql.py
+docker exec -it meilisync-localdev-meilisync-1 poetry run pytest tests/test_postgres.py
 ```
 
 ## License
