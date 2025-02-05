@@ -4,10 +4,12 @@ services:
     platform: linux/x86_64
     build: .
     restart: always
-    command: ["meilisync", "start"]
+    command: ["sleep", "infinity"]
     depends_on:
       - meilisearch
       - db-mongo
+      - db-postgres
+      - db-mysql
 
   db-postgres:
     build: tests/docker/postgres

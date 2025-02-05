@@ -231,8 +231,20 @@ Setup
 
 Then to run the tests
 
+Mongo
 ```
-docker exec -it meilisync-localdev-meilisync-1 poetry run pytest
+docker exec -it meilisync-localdev-meilisync-1 meilisync --config tests/config/mongo.yml start
+docker exec -it meilisync-localdev-meilisync-1 poetry run pytest tests/test_mongo.py
+```
+MySQL
+```
+docker exec -it meilisync-localdev-meilisync-1 meilisync --config tests/config/mysql.yml start
+docker exec -it meilisync-localdev-meilisync-1 poetry run pytest tests/test_mysql.py
+```
+Postgres
+```
+docker exec -it meilisync-localdev-meilisync-1 meilisync --config tests/config/postgres.yml start
+docker exec -it meilisync-localdev-meilisync-1 poetry run pytest tests/test_mysql.py
 ```
 
 ## License
